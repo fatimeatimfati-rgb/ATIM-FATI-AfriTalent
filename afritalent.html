@@ -1,0 +1,1016 @@
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-sans); background: transparent; }
+  :root {
+    --af-primary: #E8541C;
+    --af-dark: #1A1A2E;
+    --af-accent: #F5A623;
+    --af-light: #F7F4EF;
+    --af-text: #2C2C2A;
+  }
+
+  .mockup-frame {
+    border: 0.5px solid var(--color-border-tertiary);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    font-size: 13px;
+  }
+
+  /* NAVBAR */
+  .nav-bar {
+    background: var(--af-dark);
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .nav-logo {
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .logo-badge {
+    background: var(--af-primary);
+    color: #fff;
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .nav-links {
+    display: flex;
+    gap: 16px;
+    list-style: none;
+    align-items: center;
+  }
+  .nav-links li { color: rgba(255,255,255,0.7); font-size: 11px; cursor: pointer; }
+  .nav-links li:hover { color: #fff; }
+  .nav-cta {
+    background: var(--af-primary);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 500;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  .dark-toggle {
+    color: rgba(255,255,255,0.6);
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border: 0.5px solid rgba(255,255,255,0.2);
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--af-dark);
+    padding: 32px 24px 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: center;
+    min-height: 200px;
+  }
+  .hero-tag {
+    background: rgba(232,84,28,0.2);
+    color: var(--af-primary);
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    margin-bottom: 10px;
+    border: 0.5px solid rgba(232,84,28,0.3);
+  }
+  .hero h1 {
+    font-size: 26px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  .hero h1 span { color: var(--af-primary); }
+  .hero p {
+    color: rgba(255,255,255,0.65);
+    font-size: 12px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .hero-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--af-primary);
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .btn-outline {
+    border: 0.5px solid rgba(255,255,255,0.3);
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 11px;
+    cursor: pointer;
+    background: transparent;
+  }
+  .hero-visual {
+    background: rgba(232,84,28,0.1);
+    border: 0.5px solid rgba(232,84,28,0.2);
+    border-radius: 12px;
+    padding: 16px;
+    position: relative;
+  }
+  .hero-map-bg {
+    color: rgba(255,255,255,0.06);
+    font-size: 60px;
+    text-align: center;
+    line-height: 1;
+    font-weight: 500;
+  }
+  .float-card {
+    background: rgba(255,255,255,0.07);
+    border: 0.5px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 10px;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .float-card .avatar {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--af-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    color: #fff;
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+  .online-dot {
+    width: 6px; height: 6px;
+    background: #22c55e;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* STATS BAR */
+  .stats-bar {
+    background: var(--af-primary);
+    padding: 14px 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+  }
+  .stat-item {}
+  .stat-num {
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+  }
+  .stat-label {
+    font-size: 10px;
+    color: rgba(255,255,255,0.8);
+    margin-top: 2px;
+  }
+
+  /* BENTO GRID */
+  .section {
+    padding: 24px;
+    background: var(--color-background-primary);
+  }
+  .section-label {
+    font-size: 10px;
+    color: var(--af-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+  }
+  .section-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    margin-bottom: 16px;
+  }
+
+  .bento-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 8px;
+  }
+  .bento-card {
+    background: var(--color-background-secondary);
+    border: 0.5px solid var(--color-border-tertiary);
+    border-radius: var(--border-radius-lg);
+    padding: 16px;
+    cursor: pointer;
+    transition: border-color 0.15s;
+  }
+  .bento-card:hover { border-color: var(--color-border-secondary); }
+  .bento-big { grid-column: 1; grid-row: 1 / 3; }
+  .bento-step-num {
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--af-primary);
+    opacity: 0.4;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .bento-icon {
+    width: 32px;
+    height: 32px;
+    background: rgba(232,84,28,0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .bento-card h3 {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    margin-bottom: 6px;
+  }
+  .bento-card p {
+    font-size: 11px;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+  }
+
+  /* CATEGORIES */
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 16px;
+  }
+  .cat-card {
+    border: 0.5px solid var(--color-border-tertiary);
+    border-radius: var(--border-radius-md);
+    padding: 14px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.15s;
+    background: var(--color-background-primary);
+  }
+  .cat-card:hover {
+    border-color: var(--af-primary);
+    transform: translateY(-2px);
+  }
+  .cat-icon { font-size: 22px; margin-bottom: 6px; }
+  .cat-name { font-size: 11px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 3px; }
+  .cat-count { font-size: 10px; color: var(--color-text-secondary); }
+
+  /* SECTION DARK */
+  .section-dark {
+    background: var(--af-dark);
+    padding: 24px;
+    text-align: center;
+  }
+  .section-dark .section-label { color: var(--af-accent); }
+  .section-dark .section-title { color: #fff; }
+
+  /* FREELANCE CARDS */
+  .freelance-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 16px;
+  }
+  .fl-card {
+    border: 0.5px solid var(--color-border-tertiary);
+    border-radius: var(--border-radius-lg);
+    padding: 14px;
+    background: var(--color-background-primary);
+  }
+  .fl-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--af-primary);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  .fl-name { font-size: 12px; font-weight: 500; color: var(--color-text-primary); }
+  .fl-role { font-size: 10px; color: var(--color-text-secondary); margin-bottom: 6px; }
+  .fl-stars { color: var(--af-accent); font-size: 11px; margin-bottom: 6px; }
+  .fl-rate {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--af-primary);
+    border: 0.5px solid rgba(232,84,28,0.2);
+    background: rgba(232,84,28,0.07);
+    padding: 3px 8px;
+    border-radius: 4px;
+    display: inline-block;
+  }
+
+  /* PRICING */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 16px;
+  }
+  .price-card {
+    border: 0.5px solid var(--color-border-tertiary);
+    border-radius: var(--border-radius-lg);
+    padding: 16px;
+    background: var(--color-background-primary);
+    text-align: center;
+  }
+  .price-card.featured {
+    border-color: var(--af-primary);
+    border-width: 1.5px;
+    position: relative;
+  }
+  .popular-badge {
+    position: absolute;
+    top: -9px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--af-primary);
+    color: #fff;
+    font-size: 9px;
+    padding: 2px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .price-name { font-size: 12px; font-weight: 500; color: var(--color-text-secondary); margin-bottom: 6px; }
+  .price-amount { font-size: 24px; font-weight: 500; color: var(--color-text-primary); }
+  .price-period { font-size: 10px; color: var(--color-text-secondary); }
+  .price-features { margin: 12px 0; text-align: left; }
+  .price-feature { font-size: 10px; color: var(--color-text-secondary); padding: 3px 0; display: flex; align-items: center; gap: 5px; }
+  .check { color: #22c55e; }
+  .cross { color: #ef4444; }
+  .price-btn {
+    width: 100%;
+    padding: 7px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+    background: transparent;
+    border: 0.5px solid var(--color-border-secondary);
+    color: var(--color-text-primary);
+    margin-top: 4px;
+  }
+  .price-card.featured .price-btn {
+    background: var(--af-primary);
+    color: #fff;
+    border-color: var(--af-primary);
+  }
+
+  /* FOOTER */
+  .footer {
+    background: #111;
+    padding: 20px 24px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 16px;
+  }
+  .footer-col h4 { color: rgba(255,255,255,0.9); font-size: 11px; font-weight: 500; margin-bottom: 10px; }
+  .footer-col p, .footer-col a { color: rgba(255,255,255,0.45); font-size: 10px; line-height: 1.8; display: block; text-decoration: none; cursor: pointer; }
+  .footer-col a:hover { color: rgba(255,255,255,0.7); }
+  .footer-social { display: flex; gap: 8px; margin-top: 8px; }
+  .social-icon {
+    width: 22px; height: 22px;
+    border: 0.5px solid rgba(255,255,255,0.15);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: rgba(255,255,255,0.5);
+    cursor: pointer;
+  }
+  .footer-copy {
+    background: #0a0a0a;
+    padding: 10px 24px;
+    font-size: 10px;
+    color: rgba(255,255,255,0.3);
+    text-align: center;
+  }
+
+  /* PAGE TABS */
+  .page-tabs {
+    display: flex;
+    gap: 4px;
+    padding: 12px 24px;
+    background: var(--color-background-secondary);
+    border-bottom: 0.5px solid var(--color-border-tertiary);
+    overflow-x: auto;
+  }
+  .page-tab {
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 11px;
+    cursor: pointer;
+    white-space: nowrap;
+    color: var(--color-text-secondary);
+    border: 0.5px solid transparent;
+  }
+  .page-tab.active {
+    background: var(--color-background-primary);
+    border-color: var(--color-border-tertiary);
+    color: var(--color-text-primary);
+    font-weight: 500;
+  }
+  .page-tab:hover:not(.active) { color: var(--color-text-primary); }
+
+  /* PAGE CONTENTS */
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* FILTER BAR */
+  .filter-bar {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+  .filter-btn {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    cursor: pointer;
+    border: 0.5px solid var(--color-border-secondary);
+    color: var(--color-text-secondary);
+    background: transparent;
+    transition: all 0.1s;
+  }
+  .filter-btn.active, .filter-btn:hover {
+    background: var(--af-primary);
+    color: #fff;
+    border-color: var(--af-primary);
+  }
+
+  /* CONTACT */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 20px;
+  }
+  .form-group { margin-bottom: 12px; }
+  .form-label { font-size: 11px; color: var(--color-text-secondary); margin-bottom: 4px; display: block; }
+  .form-input {
+    width: 100%;
+    padding: 8px 10px;
+    border: 0.5px solid var(--color-border-secondary);
+    border-radius: 6px;
+    font-size: 11px;
+    background: var(--color-background-primary);
+    color: var(--color-text-primary);
+  }
+  .form-input.error { border-color: #ef4444; }
+  .form-input.valid { border-color: #22c55e; }
+  .form-error { font-size: 10px; color: #ef4444; margin-top: 2px; }
+  .contact-info { font-size: 11px; color: var(--color-text-secondary); line-height: 2; }
+  .contact-info strong { color: var(--color-text-primary); font-weight: 500; }
+  .map-placeholder {
+    background: var(--color-background-secondary);
+    border: 0.5px solid var(--color-border-tertiary);
+    border-radius: 8px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: var(--color-text-secondary);
+    margin-top: 12px;
+  }
+
+  /* ABOUT */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-top: 16px;
+  }
+  .team-card {
+    border: 0.5px solid var(--color-border-tertiary);
+    border-radius: var(--border-radius-lg);
+    padding: 14px;
+    text-align: center;
+    background: var(--color-background-primary);
+  }
+  .team-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    margin: 0 auto 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+  }
+  .team-name { font-size: 12px; font-weight: 500; color: var(--color-text-primary); }
+  .team-role { font-size: 10px; color: var(--color-text-secondary); }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-top: 16px;
+  }
+  .value-card {
+    background: var(--color-background-secondary);
+    border: 0.5px solid var(--color-border-tertiary);
+    border-radius: var(--border-radius-lg);
+    padding: 14px;
+    text-align: center;
+  }
+  .value-icon { font-size: 20px; margin-bottom: 8px; }
+  .value-name { font-size: 12px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 4px; }
+  .value-desc { font-size: 10px; color: var(--color-text-secondary); line-height: 1.5; }
+
+  .section-alt { background: var(--color-background-secondary); padding: 24px; }
+</style>
+
+<h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Maquette interactive du site AfriTalent — 5 pages navigables</h2>
+
+<div class="mockup-frame">
+  <!-- Page Tabs -->
+  <div class="page-tabs">
+    <div class="page-tab active" onclick="showPage('home')">index.html</div>
+    <div class="page-tab" onclick="showPage('freelances')">freelances.html</div>
+    <div class="page-tab" onclick="showPage('tarifs')">tarifs.html</div>
+    <div class="page-tab" onclick="showPage('about')">about.html</div>
+    <div class="page-tab" onclick="showPage('contact')">contact.html</div>
+  </div>
+
+  <!-- NAVBAR (shared) -->
+  <div class="nav-bar">
+    <div class="nav-logo">
+      <div class="logo-badge">AT</div>
+      AfriTalent
+    </div>
+    <ul class="nav-links">
+      <li>Accueil</li>
+      <li>Freelances</li>
+      <li>Tarifs</li>
+      <li>À propos</li>
+      <li>Blog</li>
+      <li>Contact</li>
+    </ul>
+    <div style="display:flex;gap:8px;align-items:center">
+      <div class="dark-toggle" onclick="toggleDark()"><i class="ti ti-moon"></i> Mode</div>
+      <div class="nav-cta">Rejoindre AfriTalent</div>
+    </div>
+  </div>
+
+  <!-- ===== PAGE HOME ===== -->
+  <div class="page active" id="page-home">
+    <!-- HERO -->
+    <div class="hero">
+      <div>
+        <div class="hero-tag">✦ Plateforme #1 en Afrique</div>
+        <h1>Trouvez le talent <span>africain</span> qu'il vous faut</h1>
+        <p>Connectez-vous avec des milliers de freelances tech qualifiés à travers l'Afrique. Développement, design, data et bien plus.</p>
+        <div class="hero-btns">
+          <div class="btn-primary">Je suis Freelance</div>
+          <div class="btn-outline">Je cherche un Freelance</div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-map-bg">🌍</div>
+        <div class="float-card">
+          <div class="avatar">AK</div>
+          <div><strong style="color:#fff">Aminata K.</strong><br>UI/UX Designer · Dakar</div>
+          <div class="online-dot"></div>
+        </div>
+        <div class="float-card">
+          <div class="avatar" style="background:#8B5CF6">OB</div>
+          <div><strong style="color:#fff">Oumar B.</strong><br>Dev Full-Stack · Abidjan</div>
+          <div class="online-dot"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATS BAR (animated counters) -->
+    <div class="stats-bar">
+      <div class="stat-item">
+        <div class="stat-num" id="cnt1">0</div>
+        <div class="stat-label">Freelances actifs</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" id="cnt2">0</div>
+        <div class="stat-label">Entreprises partenaires</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" id="cnt3">0</div>
+        <div class="stat-label">Missions réalisées</div>
+      </div>
+    </div>
+
+    <!-- COMMENT ÇA MARCHE — BENTO GRID -->
+    <div class="section">
+      <div class="section-label">Processus</div>
+      <div class="section-title">Comment ça marche</div>
+      <div class="bento-grid">
+        <div class="bento-card bento-big">
+          <div class="bento-step-num">01</div>
+          <div class="bento-icon">👤</div>
+          <h3>Créez votre profil</h3>
+          <p>Inscrivez-vous gratuitement, définissez vos compétences, votre tarif et vos disponibilités. Votre profil est votre vitrine professionnelle.</p>
+          <div style="margin-top:12px;padding:12px;background:rgba(232,84,28,0.05);border-radius:8px;border:0.5px solid rgba(232,84,28,0.1)">
+            <div style="font-size:10px;color:var(--color-text-secondary);margin-bottom:6px">Compétences populaires :</div>
+            <div style="display:flex;gap:4px;flex-wrap:wrap">
+              <span style="background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);padding:2px 8px;border-radius:20px;font-size:9px;color:var(--color-text-secondary)">React</span>
+              <span style="background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);padding:2px 8px;border-radius:20px;font-size:9px;color:var(--color-text-secondary)">Python</span>
+              <span style="background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);padding:2px 8px;border-radius:20px;font-size:9px;color:var(--color-text-secondary)">Figma</span>
+              <span style="background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);padding:2px 8px;border-radius:20px;font-size:9px;color:var(--color-text-secondary)">Node.js</span>
+            </div>
+          </div>
+        </div>
+        <div class="bento-card">
+          <div class="bento-step-num">02</div>
+          <div class="bento-icon">🔍</div>
+          <h3>Trouvez une mission</h3>
+          <p>Parcourez les offres et postulez en un clic.</p>
+        </div>
+        <div class="bento-card">
+          <div class="bento-step-num">03</div>
+          <div class="bento-icon">🤝</div>
+          <h3>Collaborez</h3>
+          <p>Travaillez de manière sécurisée avec paiement garanti.</p>
+        </div>
+        <div class="bento-card" style="background:rgba(232,84,28,0.05);border-color:rgba(232,84,28,0.15)">
+          <div class="bento-step-num" style="opacity:1;font-size:22px">💳</div>
+          <h3>Soyez payé(e)</h3>
+          <p>Mobile Money, virement, ou carte. Paiements sécurisés dans 48h.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CATÉGORIES -->
+    <div class="section-alt">
+      <div class="section-label">Services</div>
+      <div class="section-title">Catégories de services</div>
+      <div class="cat-grid">
+        <div class="cat-card"><div class="cat-icon">💻</div><div class="cat-name">Développement Web</div><div class="cat-count">342 freelances</div></div>
+        <div class="cat-card"><div class="cat-icon">🎨</div><div class="cat-name">Design UI/UX</div><div class="cat-count">187 freelances</div></div>
+        <div class="cat-card"><div class="cat-icon">📈</div><div class="cat-name">Marketing Digital</div><div class="cat-count">256 freelances</div></div>
+        <div class="cat-card"><div class="cat-icon">🤖</div><div class="cat-name">Data & IA</div><div class="cat-count">128 freelances</div></div>
+        <div class="cat-card"><div class="cat-icon">✍️</div><div class="cat-name">Rédaction Tech</div><div class="cat-count">94 freelances</div></div>
+        <div class="cat-card"><div class="cat-icon">☁️</div><div class="cat-name">DevOps & Cloud</div><div class="cat-count">211 freelances</div></div>
+      </div>
+    </div>
+
+    <!-- CTA BANDEAU -->
+    <div style="background:var(--af-primary);padding:24px;text-align:center">
+      <div style="font-size:18px;font-weight:500;color:#fff;margin-bottom:8px">Prêt(e) à rejoindre AfriTalent ?</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.8);margin-bottom:16px">Plus de 2 500 talents vous attendent. Inscription gratuite.</div>
+      <div class="btn-outline" style="display:inline-block">Créer mon compte gratuit →</div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <div class="footer-col">
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px"><div class="logo-badge">AT</div><span style="color:#fff;font-weight:500;font-size:12px">AfriTalent</span></div>
+        <p>La première plateforme de mise en relation entre freelances tech africains et entreprises.</p>
+        <div class="footer-social">
+          <div class="social-icon"><i class="ti ti-brand-twitter"></i></div>
+          <div class="social-icon"><i class="ti ti-brand-linkedin"></i></div>
+          <div class="social-icon"><i class="ti ti-brand-instagram"></i></div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Liens utiles</h4>
+        <a>Accueil</a><a>Freelances</a><a>Tarifs</a><a>À propos</a>
+      </div>
+      <div class="footer-col">
+        <h4>Ressources</h4>
+        <a>Blog</a><a>Guides</a><a>API Docs</a><a>FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a>contact@afritalent.com</a><a>+221 78 835 75 98</a><a>Dakar, Sénégal</a>
+      </div>
+    </div>
+    <div class="footer-copy">© <span id="year">2026</span> AfriTalent. Tous droits réservés.</div>
+  </div>
+
+  <!-- ===== PAGE FREELANCES ===== -->
+  <div class="page" id="page-freelances">
+    <div class="section">
+      <div class="section-label">Catalogue</div>
+      <div class="section-title">Nos freelances</div>
+      <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterFreelances('tous', this)">Tous</button>
+        <button class="filter-btn" onclick="filterFreelances('dev', this)">Dev Web</button>
+        <button class="filter-btn" onclick="filterFreelances('design', this)">Design UI/UX</button>
+        <button class="filter-btn" onclick="filterFreelances('data', this)">Data & IA</button>
+        <button class="filter-btn" onclick="filterFreelances('marketing', this)">Marketing</button>
+        <button class="filter-btn" onclick="filterFreelances('devops', this)">DevOps</button>
+      </div>
+      <div class="freelance-grid" id="fl-grid">
+        <div class="fl-card" data-cat="dev"><div class="fl-avatar">AK</div><div class="fl-name">Aminata Kouyaté</div><div class="fl-role">Dev Full-Stack</div><div class="fl-stars">★★★★★</div><div class="fl-rate">35 000 FCFA/h</div></div>
+        <div class="fl-card" data-cat="design"><div class="fl-avatar" style="background:#8B5CF6">OB</div><div class="fl-name">Oumar Ba</div><div class="fl-role">UI/UX Designer</div><div class="fl-stars">★★★★☆</div><div class="fl-rate">28 000 FCFA/h</div></div>
+        <div class="fl-card" data-cat="data"><div class="fl-avatar" style="background:#059669">FD</div><div class="fl-name">Fatou Diallo</div><div class="fl-role">Data Scientist</div><div class="fl-stars">★★★★★</div><div class="fl-rate">42 000 FCFA/h</div></div>
+        <div class="fl-card" data-cat="dev"><div class="fl-avatar" style="background:#D97706">KS</div><div class="fl-name">Kofi Asante</div><div class="fl-role">Dev React/Node</div><div class="fl-stars">★★★★☆</div><div class="fl-rate">38 000 FCFA/h</div></div>
+        <div class="fl-card" data-cat="marketing"><div class="fl-avatar" style="background:#DC2626">MN</div><div class="fl-name">Marie Ndoye</div><div class="fl-role">Growth Marketer</div><div class="fl-stars">★★★★★</div><div class="fl-rate">25 000 FCFA/h</div></div>
+        <div class="fl-card" data-cat="devops"><div class="fl-avatar" style="background:#0891B2">SC</div><div class="fl-name">Sidy Coulibaly</div><div class="fl-role">DevOps Engineer</div><div class="fl-stars">★★★★★</div><div class="fl-rate">45 000 FCFA/h</div></div>
+        <div class="fl-card" data-cat="design"><div class="fl-avatar" style="background:#7C3AED">IA</div><div class="fl-name">Ines Ahoua</div><div class="fl-role">Motion Designer</div><div class="fl-stars">★★★★☆</div><div class="fl-rate">32 000 FCFA/h</div></div>
+        <div class="fl-card" data-cat="data"><div class="fl-avatar" style="background:#065F46">YT</div><div class="fl-name">Yaw Tetteh</div><div class="fl-role">ML Engineer</div><div class="fl-stars">★★★★★</div><div class="fl-rate">50 000 FCFA/h</div></div>
+        <div class="fl-card" data-cat="dev"><div class="fl-avatar" style="background:#9D174D">AS</div><div class="fl-name">Aïssatou Sy</div><div class="fl-role">Dev Mobile Flutter</div><div class="fl-stars">★★★★☆</div><div class="fl-rate">36 000 FCFA/h</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== PAGE TARIFS ===== -->
+  <div class="page" id="page-tarifs">
+    <div class="section">
+      <div class="section-label">Tarification</div>
+      <div class="section-title">Choisissez votre plan</div>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="price-name">Gratuit</div>
+          <div class="price-amount">0 FCFA</div>
+          <div class="price-period">/ mois</div>
+          <div class="price-features">
+            <div class="price-feature"><span class="check">✓</span> Profil public</div>
+            <div class="price-feature"><span class="check">✓</span> 3 candidatures/mois</div>
+            <div class="price-feature"><span class="check">✓</span> Messagerie basique</div>
+            <div class="price-feature"><span class="cross">✗</span> Badge vérifié</div>
+            <div class="price-feature"><span class="cross">✗</span> Mise en avant</div>
+            <div class="price-feature"><span class="cross">✗</span> Support prioritaire</div>
+          </div>
+          <button class="price-btn">Commencer gratuitement</button>
+        </div>
+        <div class="price-card featured">
+          <div class="popular-badge">⭐ Populaire</div>
+          <div class="price-name">Pro</div>
+          <div class="price-amount">9 900</div>
+          <div class="price-period">FCFA / mois</div>
+          <div class="price-features">
+            <div class="price-feature"><span class="check">✓</span> Profil mis en avant</div>
+            <div class="price-feature"><span class="check">✓</span> Candidatures illimitées</div>
+            <div class="price-feature"><span class="check">✓</span> Badge vérifié</div>
+            <div class="price-feature"><span class="check">✓</span> Messagerie avancée</div>
+            <div class="price-feature"><span class="check">✓</span> Statistiques de profil</div>
+            <div class="price-feature"><span class="cross">✗</span> API & intégrations</div>
+          </div>
+          <button class="price-btn">Choisir Pro</button>
+        </div>
+        <div class="price-card">
+          <div class="price-name">Entreprise</div>
+          <div class="price-amount">49 000</div>
+          <div class="price-period">FCFA / mois</div>
+          <div class="price-features">
+            <div class="price-feature"><span class="check">✓</span> Tout du plan Pro</div>
+            <div class="price-feature"><span class="check">✓</span> Tableau de bord RH</div>
+            <div class="price-feature"><span class="check">✓</span> API & intégrations</div>
+            <div class="price-feature"><span class="check">✓</span> Support dédié 24/7</div>
+            <div class="price-feature"><span class="check">✓</span> Facturation équipe</div>
+            <div class="price-feature"><span class="check">✓</span> SLA garanti</div>
+          </div>
+          <button class="price-btn">Nous contacter</button>
+        </div>
+      </div>
+
+      <!-- FAQ accordion preview -->
+      <div style="margin-top:24px">
+        <div class="section-label">FAQ</div>
+        <div class="section-title">Questions fréquentes</div>
+        <div id="faq">
+          <div class="faq-item" style="border:0.5px solid var(--color-border-tertiary);border-radius:8px;margin-bottom:6px;overflow:hidden">
+            <div onclick="toggleFaq(0)" style="padding:12px 14px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:500;color:var(--color-text-primary)">Comment fonctionne la commission d'AfriTalent ? <i class="ti ti-chevron-down faq-icon" style="font-size:14px;transition:transform 0.2s"></i></div>
+            <div class="faq-body" style="display:none;padding:0 14px 12px;font-size:11px;color:var(--color-text-secondary);line-height:1.6">AfriTalent prélève une commission de 10% sur chaque transaction réussie. Cette commission finance les services de sécurité des paiements, le support client et le développement de la plateforme.</div>
+          </div>
+          <div class="faq-item" style="border:0.5px solid var(--color-border-tertiary);border-radius:8px;margin-bottom:6px;overflow:hidden">
+            <div onclick="toggleFaq(1)" style="padding:12px 14px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:500;color:var(--color-text-primary)">Quels modes de paiement sont acceptés ? <i class="ti ti-chevron-down faq-icon" style="font-size:14px;transition:transform 0.2s"></i></div>
+            <div class="faq-body" style="display:none;padding:0 14px 12px;font-size:11px;color:var(--color-text-secondary);line-height:1.6">Nous acceptons Orange Money, Wave, MTN Mobile Money, les cartes Visa/Mastercard et les virements bancaires locaux dans 12 pays africains.</div>
+          </div>
+          <div class="faq-item" style="border:0.5px solid var(--color-border-tertiary);border-radius:8px;margin-bottom:6px;overflow:hidden">
+            <div onclick="toggleFaq(2)" style="padding:12px 14px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:500;color:var(--color-text-primary)">Puis-je annuler mon abonnement Pro ? <i class="ti ti-chevron-down faq-icon" style="font-size:14px;transition:transform 0.2s"></i></div>
+            <div class="faq-body" style="display:none;padding:0 14px 12px;font-size:11px;color:var(--color-text-secondary);line-height:1.6">Oui, vous pouvez annuler à tout moment depuis votre espace membre. L'accès Pro reste actif jusqu'à la fin de la période payée, sans frais supplémentaires.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== PAGE ABOUT ===== -->
+  <div class="page" id="page-about">
+    <div class="section">
+      <div class="section-label">Notre histoire</div>
+      <div class="section-title">Nés en Afrique, faits pour l'Afrique</div>
+      <div style="display:grid;grid-template-columns:2fr 1fr;gap:20px;align-items:start">
+        <p style="font-size:12px;color:var(--color-text-secondary);line-height:1.8">AfriTalent est née en 2026 à Dakar de la conviction que le continent africain regorge de talents tech extraordinaires qui méritent une plateforme à leur hauteur. Fondée par Fati Atim l'entrepreneuse passionnée, la plateforme connecte aujourd'hui des milliers de freelances avec des entreprises locales et internationales.</p>
+        <div style="background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:12px;padding:14px;text-align:center">
+          <div style="font-size:28px;font-weight:500;color:var(--af-primary)">2021</div>
+          <div style="font-size:11px;color:var(--color-text-secondary)">Année de fondation</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-alt">
+      <div class="section-label">Équipe</div>
+      <div class="section-title">La fondatrice</div>
+      <div class="team-grid">
+        <div class="team-card"><div class="team-avatar" style="background:var(--af-primary)">FA</div><div class="team-name">Fati Atim</div><div class="team-role">CEO & fondatrice</div></div>
+       </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Nos valeurs</div>
+      <div class="section-title">Ce qui nous guide</div>
+      <div class="values-grid">
+        <div class="value-card"><div class="value-icon">💡</div><div class="value-name">Innovation</div><div class="value-desc">Toujours chercher des solutions nouvelles aux défis africains.</div></div>
+        <div class="value-card"><div class="value-icon">🌍</div><div class="value-name">Accessibilité</div><div class="value-desc">Rendre le freelance tech accessible à tous, partout sur le continent.</div></div>
+        <div class="value-card"><div class="value-icon">🤝</div><div class="value-name">Communauté</div><div class="value-desc">Construire ensemble un écosystème tech africain fort et solidaire.</div></div>
+        <div class="value-card"><div class="value-icon">⭐</div><div class="value-name">Excellence</div><div class="value-desc">Des standards de qualité élevés pour chaque mission réalisée.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== PAGE CONTACT ===== -->
+  <div class="page" id="page-contact">
+    <div class="section">
+      <div class="section-label">Contact</div>
+      <div class="section-title">Contactez-nous</div>
+      <div class="contact-grid">
+        <div>
+          <div class="form-group">
+            <label class="form-label">Prénom</label>
+            <input class="form-input" type="text" id="f-prenom" placeholder="Votre prénom">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Nom</label>
+            <input class="form-input" type="text" id="f-nom" placeholder="Votre nom">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input class="form-input" type="email" id="f-email" placeholder="vous@exemple.com">
+            <div class="form-error" id="err-email" style="display:none">Format email invalide (ex: nom@domaine.com)</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Sujet</label>
+            <select class="form-input" id="f-sujet">
+              <option value="">-- Choisir un sujet --</option>
+              <option>Problème de compte</option>
+              <option>Question facturation</option>
+              <option>Partenariat</option>
+              <option>Signalement</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Message (min. 20 caractères)</label>
+            <textarea class="form-input" id="f-msg" rows="4" placeholder="Votre message..."></textarea>
+            <div class="form-error" id="err-msg" style="display:none">Le message doit contenir au moins 20 caractères.</div>
+          </div>
+          <button onclick="validateForm()" style="background:var(--af-primary);color:#fff;border:none;padding:10px 20px;border-radius:6px;font-size:12px;font-weight:500;cursor:pointer;width:100%">Envoyer le message</button>
+          <div id="form-success" style="display:none;margin-top:10px;padding:10px;background:rgba(34,197,94,0.1);border:0.5px solid #22c55e;border-radius:6px;font-size:11px;color:#15803d;text-align:center">✓ Message envoyé avec succès ! Nous vous répondrons dans 24h.</div>
+        </div>
+        <div>
+          <div class="contact-info">
+            <div><strong><i class="ti ti-mail"></i> Email</strong><br>contact@afritalent.com</div>
+            <div style="margin-top:10px"><strong><i class="ti ti-phone"></i> Téléphone</strong><br>+221 78 835 75 98</div>
+            <div style="margin-top:10px"><strong><i class="ti ti-map-pin"></i> Adresse</strong><br>Dakar, Fass Delorme<br>Rue 10*14, Sénégal</div>
+          </div>
+          <div class="map-placeholder">
+            <div style="text-align:center">
+              <i class="ti ti-map" style="font-size:24px;display:block;margin-bottom:4px;opacity:0.4"></i>
+              Google Maps iframe ici<br><span style="font-size:9px">(Dakar, Sénégal)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Set year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Animated counters
+const targets = [{id:'cnt1', val:2500, suf:'+', pre:''}, {id:'cnt2', val:800, suf:'+', pre:''}, {id:'cnt3', val:12000, suf:'', pre:''}];
+let animated = false;
+function animateCounters() {
+  if (animated) return; animated = true;
+  targets.forEach(({id, val, suf, pre}) => {
+    let cur = 0;
+    const el = document.getElementById(id);
+    if (!el) return;
+    const step = val / 40;
+    const timer = setInterval(() => {
+      cur = Math.min(cur + step, val);
+      el.textContent = pre + Math.round(cur).toLocaleString('fr-FR') + suf;
+      if (cur >= val) clearInterval(timer);
+    }, 30);
+  });
+}
+setTimeout(animateCounters, 600);
+
+// Page navigation
+function showPage(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.page-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  const tabs = ['home','freelances','tarifs','about','contact'];
+  document.querySelectorAll('.page-tab')[tabs.indexOf(page)].classList.add('active');
+}
+
+// Freelance filter
+function filterFreelances(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.fl-card').forEach(card => {
+    if (cat === 'tous' || card.dataset.cat === cat) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+// Dark mode toggle
+let dark = false;
+function toggleDark() {
+  dark = !dark;
+  document.querySelector('.mockup-frame').style.filter = dark ? 'invert(0.85) hue-rotate(180deg)' : '';
+}
+
+// FAQ
+function toggleFaq(i) {
+  const items = document.querySelectorAll('.faq-item');
+  const body = items[i].querySelector('.faq-body');
+  const icon = items[i].querySelector('.faq-icon');
+  const isOpen = body.style.display === 'block';
+  // close all
+  document.querySelectorAll('.faq-body').forEach(b => b.style.display = 'none');
+  document.querySelectorAll('.faq-icon').forEach(ic => ic.style.transform = '');
+  if (!isOpen) {
+    body.style.display = 'block';
+    icon.style.transform = 'rotate(180deg)';
+  }
+}
+
+// Form validation
+function validateForm() {
+  let valid = true;
+  const email = document.getElementById('f-email');
+  const msg = document.getElementById('f-msg');
+  const errEmail = document.getElementById('err-email');
+  const errMsg = document.getElementById('err-msg');
+  const success = document.getElementById('form-success');
+
+  // Reset
+  [email, msg].forEach(el => { el.classList.remove('error','valid'); });
+  errEmail.style.display = 'none';
+  errMsg.style.display = 'none';
+  success.style.display = 'none';
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email.value)) {
+    email.classList.add('error');
+    errEmail.style.display = 'block';
+    valid = false;
+  } else {
+    email.classList.add('valid');
+  }
+  if (msg.value.trim().length < 20) {
+    msg.classList.add('error');
+    errMsg.style.display = 'block';
+    valid = false;
+  } else {
+    msg.classList.add('valid');
+  }
+  if (valid) success.style.display = 'block';
+}
+</script>

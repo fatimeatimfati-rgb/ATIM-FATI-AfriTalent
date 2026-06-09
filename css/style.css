@@ -1,0 +1,188 @@
+container {
+    display: flex;
+    justify-content: space-evenly;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    min-height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+.navbar{
+     position: relative;
+     bottom: 250px;
+
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 60px;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px); /* pour Safari */
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+  border: 0.5px solid rgba(255,255,255,0.2);
+}
+titre{
+   text-align: left 10px;
+
+}
+
+.navbar ul {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  position: relative;
+}
+
+.navbar ul li {
+  position: relative;
+  z-index: 2;
+}
+
+.navbar ul li a {
+  position: relative;
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.navbar ul li.active a {
+  color: #fff;
+}
+
+.indicator {
+  position: absolute;
+  height: 100%;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  border-radius: 30px;
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 1;
+}
+ 
+body{
+font-family : Arial, sans-serif;
+background-color : hsl(143, 69%, 37%)
+}
+/*SECTION CONTACT*/
+.contact-section {
+margin-top:100px
+}
+/*ERREURS/*
+.error{
+color:red;
+font-size: 14PX.
+margin-top: 5px;
+}
+/* MESSAGES DE SUCCES*/
+.success{
+    background:green;
+    color:white;
+    padding:10px;
+    margin: top 15px;
+    border-radius:5px;
+    display:none;
+
+}
+/* FOOTER*/
+footer{
+    margin-top:50px;
+}
+/*RESPONSIVE*/
+@media (max-width:768px){
+    .contact-section{
+        padding:20px;
+    }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.navbar {
+  position: relative;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 60px;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px); /* pour Safari */
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+  border: 0.5px solid rgba(255,255,255,0.2);
+}
+
+.navbar ul {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  position: relative;
+}
+
+.navbar ul li {
+  position: relative;
+  z-index: 2;
+}
+
+.navbar ul li a {
+  position: relative;
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.navbar ul li.active a {
+  color: #fff;
+}
+
+.indicator {
+  position: absolute;
+  height: 100%;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  border-radius: 30px;
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 1;
+}
+.btn-afritalent {
+  position: fixed;   /* reste collé même si tu scrolls */
+  bottom: 20px;      /* 20px du bas */
+  left: 20px;        /* 20px de la gauche */
+  background: #ff6b00;  /* couleur orange AfriTalent */
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 50px;  /* bouton arrondi */
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* ombre stylée */
+  z-index: 9999;  /* passe au-dessus de tout */
+  transition: 0.3s;
+}
+
+.btn-afritalent:hover {
+  background: #e05f00;
+  transform: scale(1.05); /* grossit un peu au survol */
+}

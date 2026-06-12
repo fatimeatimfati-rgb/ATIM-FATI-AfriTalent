@@ -310,3 +310,14 @@ document.getElementById('filterSelect').addEventListener('change', function() {
     }
   });
 });
+
+ const boutons = document.querySelectorAll(".btn-plan");
+
+boutons.forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        alert(`Merci d\'avoir choisi une offre AfriTalent !`);
+    });
+
+});

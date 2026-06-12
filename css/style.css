@@ -814,3 +814,43 @@ body{
         font-size:35px;
     }
 }
+ /* tablette 768px */
+ @media(max-width:768px) {
+  .nav-bar nav {
+    display: none; /* cache  le menu ,on mettra le burger aprés */
+  }
+  .container {
+    padding: 20px;
+  }
+}
+/* mobile 375px */
+@media(max-width:375px) {
+  h1 {
+    font-size:24px;
+  }
+  .container {
+    padding: 10px;
+  }
+  }
+ card-img-top { 
+  height: 250px; 
+  object-fit: cover; 
+}
+
+.stars { 
+  color: #ffc107; 
+}
+
+.freelance-card {
+  transition: all 0.3s ease;
+}
+
+/* Media queries responsive */
+@media (max-width: 576px) {
+  .card-img-top { 
+    height: 200px; 
+  }
+  .card-title {
+    font-size: 1.1rem;
+  }
+} 

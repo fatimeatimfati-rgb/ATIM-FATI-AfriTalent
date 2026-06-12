@@ -297,3 +297,16 @@ function showPage(pageId){
 console.log(
     "AfriTalent chargé avec succès"
 );
+// Filtrage JS sans rechargement de page
+document.getElementById('filterSelect').addEventListener('change', function() {
+  const category = this.value;
+  const cards = document.querySelectorAll('.freelance-card');
+  
+  cards.forEach(card => {
+    if (category === 'all' || card.dataset.category === category) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+});

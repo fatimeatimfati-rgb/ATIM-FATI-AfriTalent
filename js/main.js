@@ -56,6 +56,7 @@ function animateCounters(){
     });
 
 }
+window.addEventListener('scroll', checkScroll);
 
 window.addEventListener("load", animateCounters);
 
@@ -320,4 +321,92 @@ boutons.forEach(btn => {
         alert(`Merci d\'avoir choisi une offre AfriTalent !`);
     });
 
+});
+
+const counters = document.querySelectorAll('.counter');
+
+counters.forEach(counter => {
+
+let start = 0;
+const end = +counter.dataset.target;
+
+const updateCounter = () => {
+
+start += Math.ceil(end / 100);
+
+if(start < end){
+counter.textContent = start;
+setTimeout(updateCounter,20);
+}else{
+counter.textContent = end;
+}
+
+};
+
+updateCounter();
+
+});
+const form = document.getElementById("contactForm");
+
+form.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+let valid = true;
+
+const nom = document.getElementById("nom");
+const prenom = document.getElementById("prenom");
+const email = document.getElementById("email");
+const sujet = document.getElementById("sujet");
+const message = document.getElementById("message");
+
+document.querySelectorAll("small").forEach(error=>{
+error.textContent="";
+});
+
+if(nom.value.trim()===""){
+showError(nom,"Veuillez entrer votre nom");
+valid=false;
+}
+
+if(prenom.value.trim()===""){
+showError(prenom,"Veuillez entrer votre prénom");
+valid=false;
+}
+
+const regex =
+/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+if(!regex.test(email.value)){
+showError(email,"Email invalide");
+valid=false;
+}
+
+if(sujet.value===""){
+showError(sujet,"Veuillez choisir un sujet");
+valid=false;
+}
+
+if(message.value.trim().length < 20){
+showError(
+message,
+"Le message doit contenir au moins 20 caractères"
+);
+valid=false;
+}
+
+if(valid){
+
+alert("Message envoyé avec succès !");
+
+form.reset();
+
+}
+
+});
+
+function showError(input,message){
+
+input.parentElement.querySelector("small")
+.textContent = message;
 });
